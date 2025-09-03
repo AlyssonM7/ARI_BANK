@@ -3,72 +3,55 @@ package banco;
 import java.util.Scanner;
 
 public class Banco {
-	
-	public static void pause(Scanner sc) {
-	    System.out.println("Pressione a tecla ENTER para continuar...");
-	    sc.nextLine();
-	}
-	
-	public static void clearConsole() {
-	    for (int i = 0; i < 50; i++) {
-	        System.out.println();
-	    }
-	}
 
-	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		Conta c1 = new Conta();
+		Terminal.exibirCAbecalho();
+		Conta usuario = Login.coletarDados(sc);
 		
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("========== ARI BANK ==========");
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("Digite o nome do titular da conta: ");
-		c1.titular = sc.nextLine();
+		/*usuario.titular = sc.nextLine();
 		
 		System.out.println("Digite o seu CPF: ");
-		c1.cpf = sc.nextLine();
+		usuario.cpf = sc.nextLine();
 		
-		while(c1.cpf.length() > 11|| c1.cpf.length()<11) {
+		while(usuario.cpf.length() > 11|| usuario.cpf.length()<11) {
 			System.out.println("CPF inválido, tente novamnte: ");
-			c1.cpf = sc.nextLine();
+			usuario.cpf = sc.nextLine();
 		}
-		c1.cpf = c1.formataCPF(c1.cpf);
+		usuario.cpf = usuario.formataCPF(usuario.cpf);
 		
 		System.out.println("Digite sua senha de 6 digitos: ");
-		c1.senha = sc.nextLine();
+		usuario.senha = sc.nextLine();
 		String senhaVRF; 
-		while(c1.senha.length()<6||c1.senha.length()>6) {
+		while(usuario.senha.length()<6||usuario.senha.length()>6) {
 			System.out.println("Sua senha deve ter 6 digitos");
-			c1.senha = sc.nextLine();
+			usuario.senha = sc.nextLine();
 		}
 		
 		clearConsole();
 		
-		System.out.printf("Bem - vindo %s!!\n",c1.titular);
+		System.out.printf("Bem - vindo %s!!\n",usuario.titular);
 		System.out.println(" ");
 		System.out.println(" ");
 	
-		c1.saldo = 0;
+		usuario.saldo = 0;
 		pause(sc);
 		
-		int op;
+		int opcao;
 		
 		do {
 		
 			clearConsole();
-			c1.mostrarDados();
-			Menu.exibir();
+			usuario.mostrarDados();
+			Terminal.menuOperacoes();
 			
-			op = sc.nextInt();
+			opcao = sc.nextInt();
 			
 			sc.nextLine();
 			
-			switch(op) {
+			switch(opcao) {
 			
 			case 1:
 				clearConsole();
@@ -78,19 +61,19 @@ public class Banco {
 				sc.nextLine();
 				System.out.println("Digite sua senha: ");
 				senhaVRF = sc.nextLine();
-				while(senhaVRF.equals(c1.senha)== false) {
-					System.out.println("Senha incorreta. Tente novamete: ");
+				while(senhaVRF.equals(usuario.senha)== false) {
+					System.out.println("Senha incorreta. Tente novamente: ");
 					senhaVRF = sc.nextLine();
 				}
 				clearConsole();
-				c1.depositar(deposito);
+				usuario.depositar(deposito);
 				sc.nextLine();
 				break;
 				
 			case 2:
 				clearConsole();
 				float saque;
-				if(c1.saldo == 0) {
+				if(usuario.saldo == 0) {
 					System.out.println("Você não possui saldo para sacar. Realize um depósito");
 				    pause(sc);
 				}
@@ -98,19 +81,19 @@ public class Banco {
 					System.out.println("Digite o valor que deseja sacar: ");
 					saque = sc.nextFloat();
 					sc.nextLine();
-					while(saque > c1.saldo) {
+					while(saque > usuario.saldo) {
 						System.out.println("Saldo insuficiente para completar o saque. Digite outro valor: ");
 						saque = sc.nextFloat();
 						sc.nextLine();
 					}
 					System.out.println("Digite sua senha: ");
 					senhaVRF = sc.nextLine();
-					while(senhaVRF.equals(c1.senha)== false) {
+					while(senhaVRF.equals(usuario.senha)== false) {
 						System.out.println("Senha incorreta. Tente novamete: ");
 						senhaVRF = sc.nextLine();
 					}
 					clearConsole();
-					c1.sacar(saque);
+					usuario.sacar(saque);
 					sc.nextLine();
 				}
 				break;
@@ -133,7 +116,7 @@ public class Banco {
 				
 			}
 			
-		}while(op != 0);
+		}while(opcao != 0);*/
 		
 		sc.close();
 		
