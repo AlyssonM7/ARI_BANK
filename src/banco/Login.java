@@ -12,6 +12,13 @@ public class Login {
 		System.out.println("Digite o seu CPF: ");
 		String cpf = sc.nextLine();
 		
+		while(cpf.length() > 11|| cpf.length()<11) {
+			System.out.println("CPF inválido, tente novamnte: ");
+			cpf = sc.nextLine();
+		}
+		
+		cpf = Conta.formataCPF(cpf);
+		
 		System.out.println("Digite sua senha de 6 digitos: ");
 		String senha = sc.nextLine();
 		
