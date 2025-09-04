@@ -18,14 +18,42 @@ public class Banco {
 		
 		Terminal.pause(sc);
 		
-		Terminal.mostrarDados(usuario);
-		
-		Terminal.clearConsole();
-		
-		Terminal.mostrarDados(usuario);
-		
-		Terminal.exibirOperacoes();
+		int opcao = 0;
+		do {
 			
+			Terminal.clearConsole();
+			
+			Terminal.mostrarDados(usuario);
+			
+			Terminal.exibirOperacoes();
+			
+			opcao = sc.nextInt();
+			switch(opcao) {
+			
+				case 1:
+					Operacoes.depositar(sc, usuario);
+					Terminal.pause(sc);
+					break;
+				case 2:
+					Operacoes.sacar(sc, usuario);
+					Terminal.pause(sc);
+					break;
+				case 3:
+					
+					break;
+				case 4:
+					
+					break;
+				case 0:
+					System.out.println("Voce saiu do programa");
+					break;
+				default :
+					System.out.println("Opção inválida. Tente novamente.");
+					Terminal.pause(sc);
+			}
+			
+		
+		}while(opcao != 0);
 			
 			
 		
