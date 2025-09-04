@@ -33,12 +33,15 @@ public class Conta {
 	public float getSaldo() {
 		return this.saldo;
 	}
+		
+	public void setSaldo(float saldo){
+		this.saldo = saldo;
+	}
 	
 	
 	public void depositar(float valor) {
 		saldo += valor;
 		
-	    
 	}
 	
 	public void sacar(float valor) {
