@@ -39,7 +39,7 @@ public class Banco {
 					Terminal.pause(sc);
 					break;
 				case 3:
-					
+					Terminal.ex
 					break;
 				case 4:
 					
