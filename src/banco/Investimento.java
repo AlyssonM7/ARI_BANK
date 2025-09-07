@@ -13,7 +13,7 @@ public class Investimento{
 		double aplicacao =sc.nextDouble();
 		
 		//Condição para investimento.
-		if(aplicacao < Conta.saldo){
+		if(Conta.saldo < aplicacao){
 		System.out.println("Não foi possivel realizar a aolicação, saldo insuficiente");
 		
 		}else {
