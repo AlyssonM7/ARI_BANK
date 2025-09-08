@@ -17,7 +17,7 @@ public class Banco {
 		Terminal.bemVindo(usuario);
 		
 		Terminal.pause(sc);
-		
+		int opcaoInvestimento = 0;
 		int opcao = 0;
 		do {
 			
@@ -39,7 +39,26 @@ public class Banco {
 					Terminal.pause(sc);
 					break;
 				case 3:
-					Terminal.ex
+					do{
+					Terminal.mostrarCDBs12Meses;
+					Terminal.mostrarCDBs6Meses	
+					Terminal.opcoesInvestimento;
+					
+						Switch(opcaoInvestimento){
+							case 1:
+								Investimento.aplicacaoCDB12meses
+								break;
+							case 2:
+								Investimento.aplicacaoCDB6meses
+								break;
+							case 0: 
+								System.out.println("Voce saiu da área investimento.");
+								break;	
+							default:
+								System.out.println("Opção inválida. Tente novamente.");
+						}	
+
+					}while(opcaoInvestimento != 0);
 					break;
 				case 4:
 					

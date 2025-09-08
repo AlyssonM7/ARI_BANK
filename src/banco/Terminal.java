@@ -50,23 +50,16 @@ public class Terminal {
 }
 
 	
-	public static void exibirInvestimentos() {
-		
-		System.out.println("------ MENU BANCO ------");
-
-		System.out.println("1 - CDBs:");
-		System.out.println("0 - Retornar");
-	}
-
-	public static void mostrarCDBs12Meses() {
+		public static void mostrarCDBs12Meses() {
 		
 		System.out.println("ARI - CDB 360 dias");
+		System.out.println(" ");
 		System.out.println("Emissor : Banco ARI");
 		System.out.println("Rentabilidade: 15.50% aa");
 		System.out.println("Aplicação minima: R$ 1,00");
-		System.out.println("Prazo: 360 dias");
+		System.out.println("Prazo: 365 dias");
 		System.out.println("Regate Antecipado : Inativo");
-		System.out.println("Imposto de Renda: Até o talo 250%");
+		System.out.println("Imposto de Renda: Ativo");
 		System.out.println("Liquidez: No vencimento");
 		System.out.println("Grau de Risco : Baixo");
 		
@@ -75,12 +68,13 @@ public class Terminal {
 		public static void mostrarCDBs6Meses() {
 		
 		System.out.println("ARI - CDB 180 dias");
+		System.out.println(" ");
 		System.out.println("Emissor : Banco ARI");
 		System.out.println("Rentabilidade: 14.50% aa");
 		System.out.println("Aplicação minima: R$ 1,00");
 		System.out.println("Prazo: 180 dias");
 		System.out.println("Regate Antecipado : Inativo");
-		System.out.println("Imposto de Renda: Até o talo 250%");
+		System.out.println("Imposto de Renda: Ativo");
 		System.out.println("Liquidez: No vencimento");
 		System.out.println("Grau de Risco : Baixo");
 			
