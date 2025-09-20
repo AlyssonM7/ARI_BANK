@@ -6,7 +6,6 @@ public class Terminal {
 	
 	public static void exibirCabecalho() {
 		System.out.println(" ");
-		System.out.println(" ");
 		System.out.println("========== ARI BANK ==========");
 		System.out.println(" ");
 		System.out.println(" ");
@@ -14,8 +13,8 @@ public class Terminal {
 	
 	public static void mostrarDados(Conta usuario) {
 		
-		System.out.println(usuario.getTitular());
-		System.out.printf("%s             R$ %.2f\n",usuario.getCPF(),usuario.getSaldo());
+		System.out.println(usuario.getUsuario().getNome());
+		System.out.printf("%s             R$ %.2f\n",usuario.getUsuario().getCpf(),usuario.getSaldo());
 		System.out.println(" ");
 
 	}
@@ -33,10 +32,11 @@ public class Terminal {
 	} 
 	
 	public static void bemVindo(Conta usuario) {
-		System.out.printf("Bem - vindo %s!!\n",usuario.getTitular());
+		System.out.printf("Bem - vindo(a) %s!!\n",usuario.getUsuario().getNome());
 		System.out.println(" ");
 		System.out.println(" ");
 	}
+	
 	public static void pause(Scanner sc) {
 	    System.out.println("Pressione a tecla ENTER para continuar...");
 	    sc.nextLine();
@@ -47,7 +47,6 @@ public class Terminal {
 	        System.out.println();
 	    }
 	}
-}
 
 	
 		public static void mostrarCDBs12Meses() {
