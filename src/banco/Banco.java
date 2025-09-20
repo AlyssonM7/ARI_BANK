@@ -1,33 +1,26 @@
 package banco;
 
+import java.util.Scanner;
 
-public class Conta {
-	private double saldo;
-	private Cliente usuario;
-	
-	public Conta(double saldo, Cliente usuario) {
-		this.saldo = saldo;
-		this.usuario = usuario;
+public class Banco {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		Terminal.exibirCabecalho();
+		Terminal.pause(sc);
+		Terminal.clearConsole();
+		
+		Conta usuario = Login.coletarDados(sc);
+		Terminal.clearConsole();
+
+		Terminal.bemVindo(usuario);
+		Terminal.pause(sc);
+		
+		Operacoes.executarOperacoes(sc, usuario);
+		
+		sc.close();
+		
 	}
-	
-	public double getSaldo() {
-		return saldo;
-	}
-	public Cliente getUsuario() {
-		return usuario;
-	}
-	
-	public void depositar(double valor) {
-	    this.saldo += valor;
-	}
-	
-	public boolean sacar(double valor) {
-	    if (valor > this.saldo) {
-	        return false;
-	    } else {
-	        this.saldo -= valor;
-	        return true; 
-	    }
-	}
-	 
 }
