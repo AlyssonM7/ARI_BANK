@@ -65,7 +65,7 @@ public class Operacoes {
 					Terminal.pause(sc);
 					break;
 				case 3:
-					Investimento.investir(sc, usuario);
+					//Investimento.investir(sc, usuario);
 					Terminal.pause(sc);
 					break;
 				case 4:
