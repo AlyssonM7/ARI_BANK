@@ -13,10 +13,16 @@ public class Terminal {
 	
 	public static void mostrarDados(Conta usuario) {
 		
+		if(usuario.getSaldoInvestimento()<= 0) {
 		System.out.println(usuario.getUsuario().getNome());
 		System.out.printf("%s             R$ %.2f\n",usuario.getUsuario().getCpf(),usuario.getSaldo());
 		System.out.println(" ");
-
+		
+		}else {
+			System.out.println(usuario.getUsuario().getNome());
+			System.out.printf("%s            Saldo: R$ %.2f Investido: R$ %.2f\n ",usuario.getUsuario().getCpf(),usuario.getSaldo(),usuario.getSaldoInvestimento());
+			System.out.println(" ");
+		}
 	}
 
 	public static void exibirOperacoes() {
@@ -48,5 +54,11 @@ public class Terminal {
 	    }
 	}
 	
-	
+	public static void exibirInvestimento() {
+		System.out.println("------ Investimentos ------");
+		System.out.println();
+		System.out.println("1 - CDB 1 ano - taxa 114%a ");
+		System.out.println("2 - CDB 6 meses - taxa 111% 6/m");
+		System.out.println("3 - Mostrar investimentos");
+	}
 }

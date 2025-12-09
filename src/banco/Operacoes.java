@@ -65,7 +65,16 @@ public class Operacoes {
 					Terminal.pause(sc);
 					break;
 				case 3:
-					//Investimento.investir(sc, usuario);
+					Terminal.exibirInvestimento();
+					System.out.println("Opção: ");
+					int opcaoInvestimento = sc.nextInt();
+					switch(opcaoInvestimento) {
+					case 1 -> usuario.cdb12Meses();
+					case 2 -> usuario.cdb6Meses();
+					case 3 -> usuario.ConsultarInvestimentos();
+					default -> System.out.println("Opção inválida. Tente novamente.");
+					}
+					sc.nextLine();
 					Terminal.pause(sc);
 					break;
 				case 4:
